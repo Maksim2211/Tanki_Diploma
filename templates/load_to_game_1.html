@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Server</title>
+    <link rel="stylesheet" href="/static/CSS/load_to_game_1.css">
+    <script src="/static/JavaScript/home.js" type="module"></script>
+    <script src="/static/JavaScript/profile.js" defer></script>  <!-- Підключаємо новий файл -->
+</head>
+<body>
+    <canvas id="tankCanvas"></canvas>
+
+    <!-- Кнопка профілю у верхньому правому куті -->
+    <div class="profile-container">
+        <button class="profile-button">Profile</button>
+    </div>
+
+    <div class="overlay">
+        <h1>Test Place</h1>
+        <div class="button-container">
+            <a href="/templates/load_to_game_2.html" class="pixel-button">Start Game</a>
+            <button class="pixel-button">Coming Soon...</button>
+        </div>
+    </div>
+
+    <!-- 🔹 Модальне вікно профілю -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Player Profile</h2>
+            <p><strong>Username:</strong> <span id="player-name">Player123</span></p>
+            <p><strong>Score:</strong> <span id="player-score">1500</span></p>
+            <p><strong>Email:</strong> <span id="player-email">player@example.com</span></p>
+        </div>
+    </div>
+</body>
+</html>

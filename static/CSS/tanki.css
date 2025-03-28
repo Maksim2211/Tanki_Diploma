@@ -1,10 +1,23 @@
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
-  background-color: black;
-  min-width: 100vw;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-border {
+  padding: 8px; /* товщина сірої рамки */
+  background-color: #6e6e6e; /* сірий колір рамки */
+  box-sizing: content-box;
+  width: fit-content;
+  height: fit-content;
 }

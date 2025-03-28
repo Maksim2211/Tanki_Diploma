@@ -8,43 +8,54 @@
 </head>
 <body>
 
-    <canvas id="tankCanvas"></canvas>
+<canvas id="tankCanvas"></canvas>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="/static/Images/logo.png" alt="Logo" class="logo-icon">
-            <span class="logo-text">Pixel Tanks Battlefront</span>
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="leaderboard.html">Leaderboard</a></li>
-            <li><a href="bug_report.html">Bug Report</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>
-
-    <div class="leaderboard-frame">
-        <div class="leaderboard-header">
-            <h1>🏆 Leaderboard 🏆</h1>
-        </div>
-        <div class="leaderboard-content">
-            <table id="leaderboard">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Дані будуть додаватися через JS -->
-                </tbody>
-            </table>
-        </div>
+<nav class="navbar">
+    <div class="logo">
+        <img src="/static/Images/logo.png" alt="Logo" class="logo-icon">
+        <span class="logo-text">Pixel Tanks Battlefront</span>
     </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="bug_report.html">Bug Report</a></li>
+        <li><a href="register.html">Register</a></li>
+    </ul>
+</nav>
 
-    <script src="/static/JavaScript/home.js"></script>
-    <script src="/static/JavaScript/leaderboard.js"></script>
+<div class="leaderboard-frame">
+    <div class="leaderboard-header">
+        <h1>🏆 Leaderboard 🏆</h1>
+    </div>
+    <div class="leaderboard-content">
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Дані будуть додаватися через JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 🎵 Music Player -->
+<div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+  <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+  <button id="play-btn" class="music-btn">▶️</button>
+  <button id="next-btn" class="music-btn">⏭</button>
+  <button id="mute-btn" class="music-btn unmuted">🔈</button>
+  <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
+  <audio id="audio-player"></audio>
+</div>
+
+<script src="/static/JavaScript/home.js"></script>
+<script src="/static/JavaScript/leaderboard.js"></script>
+<script src="/static/JavaScript/music-player.js"></script>
 
 </body>
 </html>

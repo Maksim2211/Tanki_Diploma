@@ -256,3 +256,62 @@ a {
     margin: 10px 0 25px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+/* 🎵 Music Player Buttons */
+.music-btn {
+    background-color: #90EE90;
+    border: none;
+    color: #000;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .music-btn:hover {
+    background-color: #6fd26f;
+    transform: scale(1.05);
+  }
+  
+  #volume-slider {
+    width: 100px;
+    accent-color: #90EE90;
+    margin-left: 10px;
+  }
+
+/* 🎵 Music Player Buttons */
+.music-btn {
+    border: none;
+    color: #000;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #90EE90; /* за замовчуванням зелена */
+}
+
+.music-btn:hover {
+    transform: scale(1.05);
+}
+
+/* 🔇 Стан кнопки звуку */
+.music-btn.muted {
+    background-color: #ff4c4c; /* червона, якщо звук вимкнений */
+}
+
+.music-btn.unmuted {
+    background-color: #90EE90; /* зелена, якщо звук увімкнений */
+}
+
+/* 🎚️ Слайдер гучності */
+#volume-slider {
+    width: 100px;
+    accent-color: #90EE90;
+    margin-left: 10px;
+}

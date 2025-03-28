@@ -7,56 +7,68 @@
     <link rel="stylesheet" href="/static/CSS/bug_report.css">
 </head>
 <body>
-    <canvas id="tankCanvas"></canvas>
+<canvas id="tankCanvas"></canvas>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="/static/Images/logo.png" alt="Logo" class="logo-icon">
-            <span class="logo-text">Pixel Tanks Battlefront</span>
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="leaderboard.html">Leaderboard</a></li>
-            <li><a href="bug_report.html">Bug Report</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>   
+<nav class="navbar">
+    <div class="logo">
+        <img src="/static/Images/logo.png" alt="Logo" class="logo-icon">
+        <span class="logo-text">Pixel Tanks Battlefront</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="bug_report.html">Bug Report</a></li>
+        <li><a href="register.html">Register</a></li>
+    </ul>
+</nav>   
 
-    <div class="contact">
-        <div class="map">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.133005735026!2d32.053035276870474!3d49.406390361985856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14bc250dcf895%3A0xba464a0e8d80c83c!2z0KfQtdGA0LrQsNGB0YzQutC40Lkg0LTQtdGA0LbQsNCy0L3QuNC5INCx0ZbQt9C90LXRgS3QutC-0LvQtdC00LY!5e0!3m2!1suk!2sua!4v1740062195137!5m2!1suk!2sua" 
-                style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
-
-        <div class="form">
-            <h1>Contact Us!</h1>
-            <form onsubmit="submitBugReport(event)">
-                <div class="input-container">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea name="msg" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="active">Send</button>
-            </form>
-        </div>
+<div class="contact">
+    <div class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.133005735026!2d32.053035276870474!3d49.406390361985856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14bc250dcf895%3A0xba464a0e8d80c83c!2z0KfQtdGA0LrQsNGB0YzQutC40Lkg0LTQtdGA0LbQsNCy0L3QuNC5INCx0ZbQt9C90LXRgS3QutC-0LvQtdC00LY!5e0!3m2!1suk!2sua!4v1740062195137!5m2!1suk!2sua" 
+            style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
     </div>
 
-    <!-- Затемнення сторінки -->
-    <div id="modal-overlay"></div>
-
-    <!-- Модальне вікно -->
-    <div id="success-modal" class="modal">
-        <div class="modal-content">
-            <h2>✅ Ваше повідомлення відправлено!</h2>
-            <p>Дякуємо за зворотний зв’язок. Ми розглянемо ваш запит найближчим часом.</p>
-            <button onclick="closeModal()">OK</button>
-        </div>
+    <div class="form">
+        <h1>Contact Us!</h1>
+        <form onsubmit="submitBugReport(event)">
+            <div class="input-container">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="msg" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="active">Send</button>
+        </form>
     </div>
+</div>
 
-    <script src="/static/JavaScript/home.js"></script>
-    <script src="/static/JavaScript/form-validation.js"></script> 
+<!-- Затемнення сторінки -->
+<div id="modal-overlay"></div>
+
+<!-- Модальне вікно -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <h2>✅ Ваше повідомлення відправлено!</h2>
+        <p>Дякуємо за зворотний зв’язок. Ми розглянемо ваш запит найближчим часом.</p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+
+<!-- 🎵 Music Player -->
+<div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+  <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+  <button id="play-btn" class="music-btn">▶️</button>
+  <button id="next-btn" class="music-btn">⏭</button>
+  <button id="mute-btn" class="music-btn unmuted">🔈</button>
+  <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
+  <audio id="audio-player"></audio>
+</div>
+
+<script src="/static/JavaScript/home.js"></script>
+<script src="/static/JavaScript/form-validation.js"></script> 
+<script src="/static/JavaScript/music-player.js"></script>
+
 </body>
 </html>

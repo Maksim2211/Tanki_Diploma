@@ -8,7 +8,7 @@ export default class View {
     this.context = canvas.getContext('2d');
     this.context.imageSmoothingEnabled = false;
     this.sprite = sprite;
-    this.fieldOffsetX = 8; // Відступ для поля гри від лівої сторони
+    this.fieldOffsetX = 0; // Відступ для поля гри від лівої сторони
   }
 
   async init() {

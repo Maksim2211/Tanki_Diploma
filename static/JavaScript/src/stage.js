@@ -16,24 +16,30 @@ export default class Stage extends EventEmitter {
 
     static createTerrain(map) {
         const objects = [];
-
+    
+        // Розрахунок відступу для центрування карти
+        const mapSize = map.length * TILE_SIZE;
+        const offsetX = Math.floor((STAGE_SIZE - mapSize) / 2);
+        const offsetY = Math.floor((STAGE_SIZE - mapSize) / 2);
+    
         for (let i = 0; i < map.length; i++) {
             for (let j = 0; j < map.length; j++) {
                 const value = map[j][i];
-
+    
                 if (value) {
                     const object = Stage.createObject(value, {
-                        x: i * TILE_SIZE,
-                        y: j * TILE_SIZE
+                        x: i * TILE_SIZE + offsetX,
+                        y: j * TILE_SIZE + offsetY
                     });
-
+    
                     objects.push(object);
                 }
             }
         }
-
+    
         return objects;
     }
+    
 
     static createEnemies(types) {
         return types.map(type => new EnemyTank({ type }));

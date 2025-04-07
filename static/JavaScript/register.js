@@ -14,18 +14,18 @@ function generateCaptcha() {
 /* === Валідація CAPTCHA === */
 function validateCaptcha(event) {
     event.preventDefault(); // Запобігаємо оновленню сторінки
-    const userAnswer = document.getElementById('captcha-input').value;
-    const correctAnswer = document.getElementById('captcha-answer').value;
+    const userAnswer = document.getElementById('captcha-input').value.trim();
+    const correctAnswer = document.getElementById('captcha-answer').value.trim();
 
-    if (userAnswer == correctAnswer) {
-        showModal(); // Викликаємо модальне вікно
+    if (userAnswer === correctAnswer) {
+        showModal(); // Показати модальне вікно
     } else {
         alert("❌ Incorrect CAPTCHA. Please try again.");
         generateCaptcha();
     }
 }
 
-/* === Показати модальне вікно і накласти затемнення на всю сторінку === */
+/* === Показати модальне вікно і затемнення === */
 function showModal() {
     const modal = document.getElementById("success-modal");
     const overlay = document.getElementById("modal-overlay");
@@ -34,12 +34,12 @@ function showModal() {
     modal.style.display = "flex";
 
     setTimeout(() => {
-        overlay.style.opacity = "1"; 
-        modal.style.opacity = "1"; 
+        overlay.style.opacity = "1";
+        modal.style.opacity = "1";
     }, 10);
 }
 
-/* === Закрити модальне вікно і прибрати затемнення === */
+/* === Закрити модальне вікно === */
 function closeModal() {
     const modal = document.getElementById("success-modal");
     const overlay = document.getElementById("modal-overlay");
@@ -51,14 +51,16 @@ function closeModal() {
         overlay.style.display = "none";
         modal.style.display = "none";
         document.querySelector("form").reset();
+        generateCaptcha();
+        setupInputValidation(); // перевірити кнопки заново
     }, 300);
 }
 
-/* === Блокування кнопки поки не заповнені всі поля === */
+/* === Валідація введених даних та активація кнопки === */
 function setupInputValidation() {
     const emailInput = document.querySelector("input[type='email']");
-    const inputs = document.querySelectorAll(".input-box input");
-    const submitButton = document.querySelector(".btn");
+    const inputs = document.querySelectorAll(".index-input-box input");
+    const submitButton = document.querySelector("button.index-btn");
 
     function isValidEmail(email) {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -88,10 +90,5 @@ function setupInputValidation() {
         input.addEventListener("input", checkInputs);
     });
 
-    checkInputs(); // Перевіряємо на старті
+    checkInputs();
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("home.js is running and DOM is ready!");
-    drawTanks(); // Викликати функцію малювання танків
-});

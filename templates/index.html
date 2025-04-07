@@ -6,18 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixel Tanks Battlefront</title>
-  <link rel="stylesheet" href="/static/CSS/home.css">
+  <link rel="stylesheet" href="/static/CSS/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
+<!-- 🔐 Модальне вікно "Forgot password?" -->
+<div id="index-modal" class="index-modal">
+  <div class="index-modal-content">
+    <span class="index-close">&times;</span>
+    <h2>Password Recovery</h2>
+    <p>Enter your login</p>
+    <input type="text" placeholder="Enter your username" class="index-modal-input">
+    <p>Enter your email</p>
+    <input type="email" placeholder="Enter your email" class="index-modal-input">
+    <button class="index-btn">Send</button>
+  </div>
+</div>
 
 <body>
 
   <canvas id="tankCanvas"></canvas>
 
-  <nav class="navbar">
-    <div class="logo">
-      <img src="/static/Images/logo.png" alt="Logo" class="logo-icon">
-      <span class="logo-text">Pixel Tanks Battlefront</span>
+  <nav class="index-navbar">
+    <div class="index-logo">
+      <img src="/static/Images/logo.png" alt="Logo" class="index-logo-icon">
+      <span class="index-logo-text">Pixel Tanks Battlefront</span>
     </div>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -27,33 +40,33 @@
     </ul>
   </nav>
 
-  <div class="content">
-    <div class="info-frame">
-      <div class="info">
+  <div class="index-content">
+    <div class="index-info-frame">
+      <div class="index-info">
         <h1>Welcome to Pixel Tanks Battlefront website!</h1>
         <p>This game about 2D tanks was created by two students of Cherkasy State Business College - Maksym Martynenko and Maksym Usanin. Our goal was to create a game that allows players to compete in the 80s and test their skills in driving 2D tanks at different levels of difficulty. With a creative approach and technical expertise, we bring to life an 80s game that delivers an immersive gameplay experience.</p>
-        <a href="https://discord.gg/sA2yWX7K" class="btn">Join our Discord</a>
+        <a href="https://discord.gg/4htJ7xjm" class="index-btn">Join our Discord</a>
       </div>
     </div>
 
-    <div class="login-wrapper">
-      <div class="login-box">
+    <div class="index-login-wrapper">
+      <div class="index-login-box">
         <form action="/templates/load_to_game_1.html">
           <h1>login</h1>
-          <div class="input-box">
+          <div class="index-input-box">
             <input type="text" placeholder="Username" required>
             <i class='bx bxs-user'></i>
           </div>
-          <div class="input-box">
+          <div class="index-input-box">
             <input type="password" placeholder="Password" required>
             <i class='bx bxs-lock-alt'></i>
           </div>
-          <div class="remember-forgot">
+          <div class="index-remember-forgot">
             <label><input type="checkbox">Remember me</label>
             <a href="#">Forgot password?</a>
           </div>
-          <button type="submit" class="btn">Login</button>
-          <div class="register-link">
+          <button type="submit" class="index-btn" disabled>Login</button>
+          <div class="index-register-link">
             <p>Don't have an account?</p>
             <a href="/templates/register.html">Register</a>
           </div>
@@ -63,16 +76,17 @@
   </div>
 
 <!-- 🎵 Music Player -->
-<div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
-    <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
-    <button id="play-btn" class="music-btn">▶︎</button>
-    <button id="next-btn" class="music-btn">⏭</button>
-    <button id="mute-btn" class="music-btn muted">🔈</button>
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
-    <audio id="audio-player"></audio>
+<div id="index-music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+    <span id="index-track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+    <button id="index-play-btn" class="index-music-btn">▶︎</button>
+    <button id="index-next-btn" class="index-music-btn">⏭</button>
+    <button id="index-mute-btn" class="index-music-btn index-muted">🔈</button>
+    <input type="range" id="index-volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
+    <audio id="index-audio-player"></audio>
   </div>  
 
   <script src="/static/JavaScript/home.js"></script>
   <script src="/static/JavaScript/music-player.js"></script>
+  <script src="/static/JavaScript/forgotpass.js"></script>
 </body>
 </html>

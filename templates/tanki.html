@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Test</title>
-        <link rel="stylesheet" href="/static/CSS/game.css">
-        <script src="/static/JavaScript/tanki.js" type="module" async></script>
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Pixel Tank Game</title>
+  <link rel="stylesheet" href="/static/CSS/game.css" />
+  <script src="/static/JavaScript/tanki.js" type="module" async></script>
+</head>
+<body>
+  <div class="game-container">
+    <div class="canvas-wrapper">
+      <!-- 🕒 LED Timer -->
+      <div class="led-timer">
+        <span id="timer">01:00</span>
+      </div>
 
-    <body>
-        <div class="game-container">
-          <div class="canvas-wrapper">
-            <canvas id="game" width="416" height="416"></canvas>
-          </div>
-          <div class="hud">
-            <p>LEVEL: 1</p>
-            <p>Enemies: x</p>
-            <p>Scores: xxx</p>
-            <p>LIFES: xxx</p>
-          </div>
-        </div>
-      </body>
-      
+      <!-- 🎮 Полотно гри -->
+      <canvas id="game" width="416" height="416"></canvas>
+    </div>
+
+    <!-- 📊 HUD справа -->
+    <div class="hud">
+      <p>LEVEL: <span id="level">1</span></p>
+      <p>Enemies: <span id="enemies">x</span></p>
+      <p>Scores: <span id="scores">xxx</span></p>
+      <p>LIFES: <span id="lifes">xxx</span></p>    
+    </div>
+  </div>
+
+  <!-- ⏸️ Модальне вікно ПАУЗИ -->
+  <div class="pause-modal" id="pauseModal">
+    <div class="pause-modal-content">
+      <h1>PAUSED</h1>
+      <p>Press "P" to resume</p>
+    </div>
+  </div>
+
+  <!-- Інструкції по паузі під полем гри -->
+  <div class="pause-instructions">
+    Press "P" to Pause the game.
+  </div>
+</body>
 </html>

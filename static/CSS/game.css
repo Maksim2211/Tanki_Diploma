@@ -137,7 +137,7 @@ body {
   padding: 8px 20px;
   border-radius: 8px;
   border: 2px solid #444;
-  box-shadow: 0 0 15px rgba(200, 200, 200, 0.1);
+  box-shadow: 0 0 3px rgba(200, 200, 200, 0.1);
   font-family: 'Courier New', monospace;
   font-size: 28px;
   color: #dcdcdc;
@@ -159,7 +159,7 @@ body {
   text-align: center;
   border: 2px solid #555555;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(85, 85, 85, 0.8);
+  box-shadow: 0 0 3px rgba(85, 85, 85, 0.8);
   z-index: 5;
 }
 

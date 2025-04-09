@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Server</title>
@@ -12,11 +12,12 @@
 <body>
     <canvas id="tankCanvas"></canvas>
 
-    <!-- Кнопка профілю -->
+    <!-- 🔹 Кнопка профілю -->
     <div class="profile-container">
         <button class="profile-button">Profile</button>
     </div>
 
+    <!-- 🔹 Заголовок та кнопки -->
     <div class="overlay">
         <h1>Test Place</h1>
         <div class="button-container">
@@ -30,9 +31,42 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Player Profile</h2>
-            <p><strong>Username:</strong> <span id="player-name">Player123</span></p>
-            <p><strong>Score:</strong> <span id="player-score">1500</span></p>
-            <p><strong>Email:</strong> <span id="player-email">player@example.com</span></p>
+            <div class="modal-profile-container">
+                <!-- 🔸 Інформація про гравця -->
+                <div class="modal-section" id="player-info-block">
+                    <div class="player-info">
+                        <p><strong>Email:</strong> <span id="player-email">player@example.com</span></p>
+                        <p><strong>Username:</strong> <span id="player-name">Player123</span></p>
+                        <p><strong>Score:</strong> <span id="player-score">1500</span></p>
+                        <p><strong>Place in Leaderboard:</strong> <span id="Place-In-Leaderboard">1</span></p>
+                    </div>                    
+                    <button class="change-view-button" onclick="togglePasswordForm(true)">Change Password</button>
+                </div>
+
+                <!-- 🔸 Форма зміни паролю -->
+                <div class="modal-section hidden" id="password-form-block">
+                    <form class="password-change-form">
+                        <div class="password-field">
+                            <input type="password" placeholder="Old Password" required>
+                            <button type="button" class="toggle-password">👁</button>
+                        </div>
+                        <div class="password-field">
+                            <input type="password" placeholder="New Password" required>
+                            <button type="button" class="toggle-password">👁</button>
+                        </div>
+                        <div class="password-field">
+                            <input type="password" placeholder="Confirm Password" required>
+                            <button type="button" class="toggle-password">👁</button>
+                        </div>
+                        <button type="submit" class="change-password-button">Submit</button>
+                    </form>
+                    <button class="change-view-button" onclick="togglePasswordForm(false)">Back</button>
+                </div>
+            </div>
+
+            <div class="logout-wrapper">
+                <button class="logout-button" onclick="handleLogout()">Log Out</button>
+            </div>
         </div>
     </div>
 </body>

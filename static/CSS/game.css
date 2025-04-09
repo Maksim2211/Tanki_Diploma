@@ -163,3 +163,21 @@ body {
   z-index: 5;
 }
 
+.music-btn:hover {
+  background-color: #6fd26f;
+  transform: scale(1.05);
+}
+
+#volume-slider {
+  width: 100px;
+  accent-color: #90EE90;
+  margin-left: 10px;
+}
+
+.music-btn.muted {
+  background-color: #ff4c4c;
+}
+
+.music-btn.unmuted {
+  background-color: #90EE90;
+}

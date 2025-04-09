@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/CSS/load_to_game_1.css">
     <script src="/static/JavaScript/home.js" type="module"></script>
     <script src="/static/JavaScript/profile.js" defer></script>
+    <script src="/static/JavaScript/music-player.js" defer></script>
 </head>
 <body>
     <canvas id="tankCanvas"></canvas>
@@ -69,5 +70,16 @@
             </div>
         </div>
     </div>
+
+    <div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+        <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+        <button id="play-btn" class="music-btn">▶︎</button>
+        <button id="next-btn" class="music-btn">⏭</button>
+        <button id="mute-btn" class="music-btn muted">🔈</button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
+        <audio id="audio-player"></audio>
+    </div>
+
+    
 </body>
 </html>

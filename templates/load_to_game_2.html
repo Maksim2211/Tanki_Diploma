@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levels</title>
 
-    <!-- Підключення CSS -->
     <link rel="stylesheet" href="/static/CSS/load_to_game_2.css">
-
-    <!-- Підключення скрипту профілю -->
+    
     <script src="/static/JavaScript/profile.js" defer></script>
-
-    <!-- Підключення скрипту для гри -->
     <script src="/static/JavaScript/home.js" type="module"></script>
+    <script src="/static/JavaScript/music-player.js" type="module"></script>
 </head>
 <body>
     <!-- Полотно для гри -->
@@ -32,9 +29,14 @@
 
         <div class="button-container">
             <a href="./tanki.html" class="pixel-button">1</a>
-            <a href="#" class="pixel-button">SOON...</a>
-            <a href="#" class="pixel-button">SOON...</a>
-            <a href="#" class="pixel-button">SOON...</a>
+            <a href="./tanki.html" class="pixel-button">2</a>
+            <a href="./tanki.html" class="pixel-button">3</a>
+            <a href="./tanki.html" class="pixel-button">4</a>
+            <a href="./tanki.html" class="pixel-button">5</a>
+            <a href="./tanki.html" class="pixel-button">6</a>
+            <a href="./tanki.html" class="pixel-button">7</a>
+            <a href="./tanki.html" class="pixel-button">8</a>
+            <a href="./tanki.html" class="pixel-button">9</a>
         </div>
     </div>
 
@@ -48,5 +50,15 @@
             <p><strong>Email:</strong> <span id="player-email">player@example.com</span></p>
         </div>
     </div>
+
+    <div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+        <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+        <button id="play-btn" class="music-btn">▶︎</button>
+        <button id="next-btn" class="music-btn">⏭</button>
+        <button id="mute-btn" class="music-btn muted">🔈</button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
+        <audio id="audio-player"></audio>
+    </div>
+
 </body>
 </html>

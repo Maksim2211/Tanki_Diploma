@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("home.js завантажено!");
+document.addEventListener("DOMContentLoaded", function () {
 
     const canvas = document.getElementById("tankCanvas");
 
@@ -131,31 +130,35 @@ document.addEventListener("DOMContentLoaded", function() {
         animateTanks();
     });
 
-    // 🔐 Активація кнопки "Login", коли всі поля заповнені
+    // 🔐 Активація кнопки "Login", коли всі поля заповнені (тільки якщо елементи існують)
     const loginInputs = document.querySelectorAll(".index-login-box input");
     const loginButton = document.querySelector(".index-login-box .index-btn");
 
-    function checkLoginInputs() {
-        let allFilled = true;
+    if (loginInputs.length > 0 && loginButton) {
+        function checkLoginInputs() {
+            let allFilled = true;
+            loginInputs.forEach(input => {
+                if (input.value.trim() === "") {
+                    allFilled = false;
+                }
+            });
+
+            if (allFilled) {
+                loginButton.classList.add("active");
+                loginButton.disabled = false;
+            } else {
+                loginButton.classList.remove("active");
+                loginButton.disabled = true;
+            }
+        }
 
         loginInputs.forEach(input => {
-            if (input.value.trim() === "") {
-                allFilled = false;
-            }
+            input.addEventListener("input", checkLoginInputs);
         });
 
-        if (allFilled) {
-            loginButton.classList.add("active");
-            loginButton.disabled = false;
-        } else {
-            loginButton.classList.remove("active");
-            loginButton.disabled = true;
-        }
+        checkLoginInputs();
+    } else {
+        console.log("ℹ️ Логін-форма не знайдена — login скрипт пропущено.");
     }
 
-    loginInputs.forEach(input => {
-        input.addEventListener("input", checkLoginInputs);
-    });
-
-    checkLoginInputs();
 });

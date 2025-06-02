@@ -8,6 +8,10 @@ body {
   align-items: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .game-container {
   display: flex;
   flex-direction: row;
@@ -182,4 +186,116 @@ body {
 #volume-slider {
   width: 100px;
   accent-color: #66ff66;
+}
+
+.modal.defeat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.defeat-modal .modal-content {
+  background: #111;
+  padding: 30px;
+  border: 2px solid red;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 20px red;
+}
+
+.modal.defeat-modal .button-group {
+  margin-top: 20px;
+}
+
+.modal.defeat-modal button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: darkred;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.modal.defeat-modal.hidden {
+  display: none;
+}
+
+/* Модальне вікно перемоги */
+#victoryModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 255, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#victoryModal .modal-content {
+  background: #002200;
+  padding: 32px 36px;
+  border: 3px solid #33ff33;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #00ff00;
+  text-align: center;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  max-width: 480px;
+  width: 90%;
+}
+
+#victoryModal h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #66ff66;
+}
+
+#victoryModal .stars {
+  font-size: 22px;
+  color: #ccffcc;
+  margin-bottom: 12px;
+}
+
+#victoryScore {
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #99ff99;
+}
+
+#victoryModal .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#victoryModal button {
+  font-family: 'Press Start 2P', monospace;
+  padding: 10px 12px;
+  font-size: 10px;
+  background-color: #003300;
+  border: 2px solid #33ff33;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#victoryModal button:hover {
+  background-color: #00aa00;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ff00;
 }

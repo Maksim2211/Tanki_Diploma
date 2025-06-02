@@ -18,14 +18,11 @@ export const Direction = {
     LEFT: 3
 };
 
-export const TerrainType = {
-    BASE: 0,
-    BRICK_WALL: 1,
-    STEEL_WALL: 2,
-    TREE: 3,
-    WATER: 4,
-    ICE: 5
+ export const TerrainType = {
+  BRICK_WALL: 1,
+  STEEL_WALL: 2,
 };
+
 
 export const BASE_POSITION = [6 * UNIT_SIZE, 12 * UNIT_SIZE];
 export const BASE_WIDTH = UNIT_SIZE;

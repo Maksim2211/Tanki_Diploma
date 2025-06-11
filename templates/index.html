@@ -15,15 +15,27 @@
   <canvas id="tankCanvas"></canvas>
 
   <!-- 🔐 Модальне вікно "Forgot password?" -->
-  <div id="index-modal" class="index-modal">
+  <div id="index-modal" class="index-modal" style="display: none;">
     <div class="index-modal-content">
       <span class="index-close">&times;</span>
-      <h2>Password Recovery</h2>
-      <p>Enter your login</p>
-      <input type="text" id="recovery-login" placeholder="Enter your username" class="index-modal-input" />
-      <p>Enter your email</p>
-      <input type="email" id="recovery-email" placeholder="Enter your email" class="index-modal-input" />
-      <button id="sendBtn" class="index-btn" disabled>Send</button>
+      <h2 id="modal-title">Password Recovery</h2>
+
+      <!-- Етап 1: логін + email -->
+      <div id="step-login">
+        <p>Enter your login</p>
+        <input type="text" id="recovery-login" placeholder="Enter your username" class="index-modal-input" />
+        <p>Enter your email</p>
+        <input type="email" id="recovery-email" placeholder="Enter your email" class="index-modal-input" />
+        <button id="sendBtn" class="index-btn" disabled>Check info</button>
+      </div>
+
+      <!-- Етап 2: Verify Key -->
+      <div id="step-verify" style="display: none;">
+        <p>Enter verification key</p>
+        <input type="text" id="verify-key" placeholder="Enter verification key" class="index-modal-input" />
+        <button id="verify-button" class="index-btn">Send</button>
+      </div>
+
       <p id="sendMessage" style="display: none; margin-top: 10px; color: #00ff99; font-weight: bold;">
         ✅ Instructions sent to your email.
       </p>
@@ -66,7 +78,7 @@
           </div>
           <div class="index-remember-forgot">
             <label><input type="checkbox" />Remember me</label>
-            <a href="#">Forgot password?</a>
+            <a href="#" id="forgot-password-link">Forgot password?</a>
           </div>
           <button type="submit" class="index-btn" disabled>Login</button>
           <div class="index-register-link">

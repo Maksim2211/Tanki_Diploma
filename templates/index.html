@@ -18,7 +18,6 @@
   <div id="index-modal" class="index-modal" style="display: none;">
     <div class="index-modal-content">
       <span class="index-close">&times;</span>
-      <h2 id="modal-title">Password Recovery</h2>
 
       <!-- Етап 1: логін + email -->
       <div id="step-login">
@@ -35,6 +34,15 @@
         <input type="text" id="verify-key" placeholder="Enter verification key" class="index-modal-input" />
         <button id="verify-button" class="index-btn">Send</button>
       </div>
+
+      <!-- Етап 3: Reset Password -->
+      <div id="step-reset" style="display: none;">
+        <h2>Reset Password</h2>
+        <input type="password" id="new-password" placeholder="New Password" class="index-modal-input" />
+        <input type="password" id="confirm-password" placeholder="Confirm Password" class="index-modal-input" />
+        <button id="reset-button" class="index-btn">Submit</button>
+      </div>
+
 
       <p id="sendMessage" style="display: none; margin-top: 10px; color: #00ff99; font-weight: bold;">
         ✅ Instructions sent to your email.

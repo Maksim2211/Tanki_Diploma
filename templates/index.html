@@ -1,112 +1,109 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pixel Tanks Battlefront</title>
-    <link rel="stylesheet" href="/static/CSS/style.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet' />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Tanks Battlefront</title>
+  <link rel="stylesheet" href="/static/CSS/style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
 
-    <canvas id="tankCanvas"></canvas>
+  <canvas id="tankCanvas"></canvas>
 
-    <nav class="index-navbar">
-        <div class="index-logo">
-            <img src="/static/Images/logo.png" alt="Logo" class="index-logo-icon" />
-            <span class="index-logo-text">Pixel Tanks Battlefront</span>
-        </div>
-        <ul id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="leaderboard.html">Leaderboard</a></li>
-            <li><a href="bug_report.html">Bug Report</a></li>
-            <li id="auth-link"><a href="register.html">Register</a></li>
-        </ul>
-    </nav>   
+  <!-- 🔐 Модальне вікно "Forgot password?" -->
+  <div id="index-modal" class="index-modal" style="display: none;">
+    <div class="index-modal-content">
+      <span class="index-close">&times;</span>
+      <h2 id="modal-title">Password Recovery</h2>
 
-    <div class="index-content">
-        <div class="index-info-frame">
-            <div class="index-info">
-                <h1>Welcome to Pixel Tanks Battlefront website!</h1>
-                <p>This game about 2D tanks was created by two students of Cherkasy State Business College - Maksym Martynenko and Maksym Usanin. Our goal was to create a game that allows players to compete in the 80s and test their skills in driving 2D tanks at different levels of difficulty. With a creative approach and technical expertise, we bring to life an 80s game that delivers an immersive gameplay experience.</p>
-                <a href="https://discord.gg/4htJ7xjm" class="index-btn">Join our Discord</a>
-            </div>
-        </div>
+      <!-- Етап 1: логін + email -->
+      <div id="step-login">
+        <p>Enter your login</p>
+        <input type="text" id="recovery-login" placeholder="Enter your username" class="index-modal-input" />
+        <p>Enter your email</p>
+        <input type="email" id="recovery-email" placeholder="Enter your email" class="index-modal-input" />
+        <button id="sendBtn" class="index-btn" disabled>Check info</button>
+      </div>
 
-        <!-- Блок логіна -->
-        <div class="index-login-wrapper">
-            <div class="index-login-box">
-                <form id="index-login-form" method="POST" action="/login">
-                <h1>Login</h1>
-                <div class="index-input-box">
-                    <input type="text" id="index-username" name="username" placeholder="Username" autocomplete="username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="index-input-box">
-                    <input type="password" id="index-password" name="password" placeholder="Password" autocomplete="current-password" required>
-                <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="index-remember-forgot">
-                    <label><input type="checkbox" id="index-rememberMe">Remember me</label>
-                    <a href="#" id="forgot-password-link">Forgot password?</a>
-                </div>
-                <button type="submit" class="index-btn" disabled>Login</button>
-                <div class="index-register-link">
-                    <p>Don't have an account?</p>
-                    <a href="/register.html">Register</a>
-                </div>
-                </form>
-                <div class="index-register-error" id="index-login-message" style="color: red; margin-top: 10px; text-align: center;"></div>
-            </div>
-        </div>
+      <!-- Етап 2: Verify Key -->
+      <div id="step-verify" style="display: none;">
+        <p>Enter verification key</p>
+        <input type="text" id="verify-key" placeholder="Enter verification key" class="index-modal-input" />
+        <button id="verify-button" class="index-btn">Send</button>
+      </div>
 
+      <p id="sendMessage" style="display: none; margin-top: 10px; color: #00ff99; font-weight: bold;">
+        ✅ Instructions sent to your email.
+      </p>
+    </div>
+  </div>
+
+  <nav class="index-navbar">
+    <div class="index-logo">
+      <img src="/static/Images/logo.png" alt="Logo" class="index-logo-icon" />
+      <span class="index-logo-text">Pixel Tanks Battlefront</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="bug_report.html">Bug Report</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <div class="index-content">
+    <div class="index-info-frame">
+      <div class="index-info">
+        <h1>Welcome to Pixel Tanks Battlefront website!</h1>
+        <p>This game about 2D tanks was created by two students of Cherkasy State Business College - Maksym Martynenko and Maksym Usanin. Our goal was to create a game that allows players to compete in the 80s and test their skills in driving 2D tanks at different levels of difficulty. With a creative approach and technical expertise, we bring to life an 80s game that delivers an immersive gameplay experience.</p>
+        <a href="https://discord.gg/4htJ7xjm" class="index-btn">Join our Discord</a>
+      </div>
     </div>
 
-    <!-- 🔐 Модальне вікно "Forgot password?" -->
-    <div id="index-modal" class="index-modal" style="display: none;">
-        <div class="index-modal-content">
-            <span class="index-close">&times;</span>
-            <h2 id="modal-title">Password Recovery</h2>
-
-    <!-- Етап 1: логін + email -->
-            <div id="step-login">
-                <p>Enter your login</p>
-                <input type="text" id="recovery-login" placeholder="Enter your username" class="index-modal-input" />
-                <p>Enter your email</p>
-                <input type="email" id="recovery-email" placeholder="Enter your email" class="index-modal-input" />
-                <button id="sendBtn" class="index-btn" disabled>Check info</button>
-            </div>
-
-    <!-- Етап 2: Verify Key -->
-            <div id="step-verify" style="display: none;">
-                <p>Enter verification key</p>
-                <input type="text" id="verify-key" placeholder="Enter verification key" class="index-modal-input" />
-                <button id="verify-button" class="index-btn">Send</button>
-            </div>
-
-    <!-- Повідомлення про успішну відправку -->
-            <p id="sendMessage" style="display: none; margin-top: 10px; color: #00ff99; font-weight: bold;">
-                ✅ Instructions sent to your email.
-            </p>
-        </div>
+    <div class="index-login-wrapper">
+      <div class="index-login-box">
+        <form action="/templates/load_to_game_1.html">
+          <h1>login</h1>
+          <div class="index-input-box">
+            <input type="text" placeholder="Username" required />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="index-input-box">
+            <input type="password" placeholder="Password" required />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="index-remember-forgot">
+            <label><input type="checkbox" />Remember me</label>
+            <a href="#" id="forgot-password-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="index-btn" disabled>Login</button>
+          <div class="index-register-link">
+            <p>Don't have an account?</p>
+            <a href="/templates/register.html">Register</a>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 
+  <!-- 🎵 Music Player -->
+  <div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
+    <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
+    <button id="play-btn" class="music-btn">▶︎</button>
+    <button id="next-btn" class="music-btn">⏭</button>
+    <button id="mute-btn" class="music-btn muted">🔈</button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;" />
+    <audio id="audio-player"></audio>
+  </div>
 
-    <!-- 🎵 Music Player -->
-    <div id="music-player" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px;">
-        <span id="track-name" style="color: #fff; margin-right: 10px;">Now playing: Track 1</span>
-        <button id="play-btn" class="music-btn">▶︎</button>
-        <button id="next-btn" class="music-btn">⏭</button>
-        <button id="mute-btn" class="music-btn muted">🔈</button>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="vertical-align: middle;">
-        <audio id="audio-player"></audio>
-    </div>
-
+  <!-- 📜 Scripts -->
   <script src="/static/JavaScript/home.js"></script>
   <script src="/static/JavaScript/music-player.js"></script>
-  <script src="/static/JavaScript/reset_password.js"></script>
+  <script src="/static/JavaScript/recover-password.js"></script>
 </body>
+
 </html>

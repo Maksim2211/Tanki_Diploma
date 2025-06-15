@@ -31,7 +31,7 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
 
 // Перемога
 document.getElementById('nextLevelBtn')?.addEventListener('click', () => {
-  window.location.href = 'tanki1.html'; 
+  window.location.href = 'tanki.html'; 
 });
 document.getElementById('menuBtn2')?.addEventListener('click', () => {
   window.location.href = 'load_to_game_2.html';

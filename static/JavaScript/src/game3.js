@@ -1,4 +1,4 @@
-import stages from './stages.js';
+import stages from './stages3.js';
 import Stage from './stage.js';
 
 export default class Game {
@@ -74,8 +74,8 @@ function showVictoryModal(score, remainingTimeMs) {
   const timeSpent = 60000 - remainingTimeMs;
 
   let stars = "⭐";
-  if (timeSpent <= 45000) stars = "⭐⭐";
-  if (timeSpent <= 40000) stars = "⭐⭐⭐";
+  if (timeSpent <= 35000) stars = "⭐⭐";
+  if (timeSpent <= 30000) stars = "⭐⭐⭐";
 
   if (starsEl) starsEl.textContent = stars;
   if (scoreEl) scoreEl.textContent = `Scores: ${score}`;

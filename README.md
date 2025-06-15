@@ -16,6 +16,7 @@
 
 - **Front-end:** HTML5, CSS3 (неонова стилістика), JavaScript (ES6)
 
+'''
 📂 Структура проєкту
 ├── static/
 │   ├── Audio/
@@ -101,6 +102,7 @@
 |   ├── reset_password.html
 |   ├── tankim.html 
 |   └── tanki.html
+'''
 
 📢 Автор
 

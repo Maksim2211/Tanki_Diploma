@@ -33,16 +33,83 @@ cd Tanki_Diploma-Tanki
 ## 📁 Структура проєкту
 
 ```
-Tanki_Diploma-Tanki/
-├── .gitattributes               # Налаштування Git
-├── README.md                    # Опис проєкту
 ├── static/
-│   ├── Audio/                   # Музика для гри
-│   ├── CSS/                     # Стили для всіх сторінок
-│   ├── Images/                  # Графіка, спрайти
-│   └── JavaScript/              # Скрипти гри та логіка
-│       ├── src/                 # Класи та об'єкти гри
-├── templates/                   # HTML шаблони (головна, гра, лідерборд, реєстрація)
+│   ├── Audio/
+│   │   ├── home1.mp3
+│   │   ├── home2.mp3
+|   |
+│   ├── CSS/
+│   │   ├── game.css
+│   │   ├── load_to_game_1.css
+│   │   ├── load_to_game_2.css
+│   │   ├── reset_password.css
+│   │   └── style.css
+|   |
+│   ├── Images/
+|   |   ├──assets/
+|   |   │  ├── sprite-clasic.png
+|   |   │  ├── sprite-hell.png
+|   |   │  ├── sprite-hells.png
+|   |   │  └── sprite.png
+|   |   │
+│   │   ├── back.png
+│   │   ├── background.png
+│   │   ├── logo.png
+│   │   ├── skin1.png
+│   │   └── skin2.png
+│   │
+│   ├── JavaScript/
+│   |   ├── src/
+│   |   |   ├── base.js
+│   |   |   ├── border.js
+│   |   |   ├── brick-wall.js
+│   |   |   ├── bullet-explosion.js
+│   |   |   ├── bullet.js
+│   |   |   ├── constants.js
+│   |   |   ├── enemy-tank.js
+│   |   |   ├── event-emitter.js
+│   |   |   ├── explosion.js
+│   |   |   ├── game-object.js
+│   |   |   ├── game.js
+│   |   |   ├── hud.js
+│   |   |   ├── input.js
+│   |   |   ├── player-tank.js
+│   |   |   ├── player.js
+│   |   |   ├── sprite.js
+│   |   |   ├── stage.js
+│   |   |   ├── stages.js
+│   |   |   ├── steel-wall.js
+│   |   |   ├── tank-explosion.js
+│   |   |   ├── tank.js
+│   |   |   ├── utils.js
+│   |   |   ├── view.js
+│   |   |   └── wall.js
+|   |   |
+│   │   ├── bug_report.js   
+│   │   ├── change_password.js
+│   │   ├── home.js   
+│   │   ├── hud.js
+│   │   ├── leaderboard.js  
+│   │   ├── load-profile.js
+│   │   ├── login.js
+│   |   ├── music-player.js
+│   |   ├── profile.js
+│   │   ├── recover-password.js
+│   │   ├── register.js
+│   │   ├── reset_password.js
+│   |   └── tanki.js
+|   |
+├── templates/
+|   ├── bug_report.html
+|   ├── index.html                # тут знаходиться форма авторизації
+|   ├── leaderboard.html
+|   ├── load_to_game_1.html
+|   ├── load_to_game_2.html
+|   ├── load_to_game_3.html
+|   ├── register.html             # форма реєстрації
+|   ├── reset_password.html
+|   ├── tankim.html 
+|   └── tanki.html
 ```
 
 ---
